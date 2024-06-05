@@ -1,3 +1,5 @@
+const { transform } = require("next/dist/build/swc");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -7,6 +9,18 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        loop: "loop 50s linear infinite",
+      },
+      keyframes: {
+        loop: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
+      },
+      fontFamily: {
+        gagalin: ["var(--font-gagalin)"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
